@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 PHOTOBOOTH ONLINE - Rp5.000 🎉</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            🎉 <strong>PHOTOBOOTH ONLINE - Rp5.000</strong> 🎉
+        </div>
+
+        <div class="form-section">
+            <!-- Form Data -->
+            <div class="form-group">
+                <label>👤 Nama:</label>
+                <input type="text" id="nama" placeholder="Masukkan nama lengkap Anda" required>
+            </div>
+
+            <div class="form-group">
+                <label>📱 No HP:</label>
+                <input type="tel" id="noHP" placeholder="08xxxxxxxxxx" required>
+            </div>
+
+            <!-- Theme Selection -->
+            <div class="form-group">
+                <label>🎨 Pilih Tema:</label>
+                <div class="theme-group">
+                    <div class="theme-option selected" data-theme="cute">
+                        <strong>Cute</strong><br><span>🐻💕</span>
+                    </div>
+                    <div class="theme-option" data-theme="vintage">
+                        <strong>Vintage</strong><br><span>📻✨</span>
+                    </div>
+                    <div class="theme-option" data-theme="korean">
+                        <strong>Korean</strong><br><span>🌸💖</span>
+                    </div>
+                    <div class="theme-option" data-theme="birthday">
+                        <strong>Birthday</strong><br><span>🎂🎈</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>📝 Teks di Foto:</label>
+                <textarea id="teksFoto" rows="3" placeholder="Selamat datang di Photobooth Online!">PHOTOBOOTH ONLINE</textarea>
+            </div>
+
+            <!-- KAMERA SECTION - DIPERBAIKI -->
+            <div class="photo-section">
+                <h3>📸 KAMERA LIVE</h3>
+                
+                <!-- Status Kamera -->
+                <div id="cameraStatus" class="status-message">Klik "Buka Kamera" untuk mulai</div>
+                
+                <!-- Video & Canvas -->
+                <div class="camera-container">
+                    <video id="videoElement" autoplay playsinline muted></video>
+                    <canvas id="canvas" class="photo-canvas"></canvas>
+                </div>
+                
+                <!-- Tombol Kamera -->
+                <div class="camera-buttons">
+                    <button class="btn btn-primary" id="openCameraBtn" onclick="initCamera()">
+                        🔓 BUKA KAMERA
+                    </button>
+                    <button class="btn btn-success" id="captureBtn" onclick="capturePhoto()" style="display:none;">
+                        📷 AMBIL FOTO
+                    </button>
+                    <button class="btn btn-secondary" id="retakeBtn" onclick="retakePhoto()" style="display:none;">
+                        🔄 Ulangi
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pembayaran -->
+            <div class="payment-info">
+                <strong>💳 CARA BAYAR:</strong><br>
+                <span class="phone-number">DANA: 085856396657</span><br><br>
+                📤 <label>Upload Bukti Transfer:</label><br>
+                <input type="file" id="buktiTransfer" accept="image/*">
+                <img id="uploadPreview" class="upload-preview">
+            </div>
+
+            <!-- Konfirmasi -->
+            <div class="checkbox-group">
+                <input type="checkbox" id="confirmPayment">
+                <label for="confirmPayment" class="checkbox-label">
+                    ☑ Saya sudah transfer & upload bukti
+                </label>
+            </div>
+
+            <!-- Tombol Utama -->
+            <button class="btn btn-primary large-btn" onclick="startSession()" id="startBtn" disabled>
+                🚀 MULAI PHOTOBOOTH
+            </button>
+            
+            <button class="btn btn-success large-btn" onclick="downloadPhoto()" id="downloadBtn" style="display:none;">
+                💾 DOWNLOAD FOTO
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
